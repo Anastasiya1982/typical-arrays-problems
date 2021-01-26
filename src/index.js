@@ -1,6 +1,6 @@
 
 exports.min = function min (array) {
-    if(array.length==0||array==undefined) {
+    if(!Array.isArray(array) || array.length === undefined || array[0] === undefined) {
         return 0;
     }
 
@@ -12,7 +12,9 @@ exports.min = function min (array) {
 };
 
 exports.max = function max (array) {
-    if(array.length ==0 || array === undefined)return 0;
+    if(!Array.isArray(array) || array.length === undefined || array[0] === undefined) {
+        return 0;
+    }
     let maxNumber = (a, b) => {
             return a > b ? a : b;
         };
@@ -22,10 +24,12 @@ exports.max = function max (array) {
 
 
 exports.avg = function avg (array) {
-    if(array.length !==0||array !==undefined) {
+    if(!Array.isArray(array) || array.length === undefined || array[0] === undefined) {
+        return 0;
+    }
         let  total = array.reduce((acc, c) => acc + c, 0);
         let res= total / array.length;
         return res;
-    } return 0;
+
 };
 
